@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="todoApp">
 <head>
    <title>Neightborhood Map</title>
-   <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+   <script src="js/lib/angular.min.js"></script>
+   <script src="js/app.js"></script>
+   <link href="css/stylesheet.css" rel="stylesheet">
 </head>
 <body>
-   
 
+   <div ng-controller="todoCtrl">
+      <h2>Total todos: {{totalTodos}} </h2>
+      <ul>
+         <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+         </li>
+      </ul>
+   </div>
 
-
-
-   <script src="js/lib/knockout-3.2.0.js"></script>
-   <script src="js/app.js"></script>
 </body>
 </html>
